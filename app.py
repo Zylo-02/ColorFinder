@@ -47,7 +47,7 @@ def get_dominant_colors():
             dominant_colors = kmeans.cluster_centers_.tolist()
 
             # Convert RGB values to hex format
-            dominant_colors_hex = [rgb_to_hex(color) for color in dominant_colors]
+            dominant_colors_hex = ['"{}"'.format(rgb_to_hex(color)) for color in dominant_colors]
 
             return jsonify({'dominant_colors': dominant_colors_hex})
 
